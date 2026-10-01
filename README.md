@@ -22,9 +22,16 @@ Borusan Otomotiv'in distribütörlüğünü yaptığı dört marka için ikinci 
 
 1. Veri setini Kaggle'dan indir: [Used Car Price Prediction Dataset](https://www.kaggle.com/datasets/taeefnajib/used-car-price-prediction-dataset) (`used_cars.csv`). Veri, lisansı nedeniyle bu repoya eklenmemiştir.
 2. Paketleri kur ve çalıştır:
-
-```bash
 pip install -r requirements.txt
 python analysis.py used_cars.csv
+Yöntem
+Temizleme: Fiyat ve kilometre sayısal hale getirildi, aykırı değerler (fiyat < $500 veya > $400.000, km > 300.000) çıkarıldı. Kaza bilgisi eksik olan ilanlar "kaza yok" sayılmadı, analizden çıkarıldı.
+SQL: Marka, yaş grubu ve kaza durumuna göre özet sorguları (SQLite).
+OLS: log(fiyat) ~ yaş + km + kaza + marka, dayanıklı (HC1) standart hatalar.
+Random Forest: %80/%20 eğitim-test ayrımı, doğrusal olmayan kıyas olarak.
+Kısıtlar
+Veri ABD pazarına ve tek bir ilan platformuna ait; ilan fiyatı gerçekleşen satış fiyatı değildir.
+Model/versiyon ve donanım bilgisi kullanılmadı; yüksek fiyatlı araçlarda tahmin hatası büyüyor.
+Yaş etkisi kesit verisinden okunuyor (aynı araçların zaman içindeki değer kaybı değil).
 Hazırlayan
 Sena Bolat
