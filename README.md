@@ -26,3 +26,5 @@ Borusan Otomotiv'in distribütörlüğünü yaptığı dört marka için ikinci 
 ```bash
 pip install -r requirements.txt
 python analysis.py used_cars.csv
+Hazırlayan
+Sena Bolat
