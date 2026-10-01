@@ -41,4 +41,4 @@ Grafikler ve SQLite veritabanı `outputs/` klasörüne yazılır.
 
 ## Hazırlayan
 
-Sena Bolat 
+Sena Bolat
